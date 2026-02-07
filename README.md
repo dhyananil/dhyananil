@@ -1,20 +1,14 @@
-<h1 align="center">Hi 👋🏼 I'm Dhyan</h1>
+### Hi, I am Dhyan:
 
-## ⭐ About Me:
+✱ Student at Presidency University, Bengaluru and a self-taught learner.<br>
+✱ Passionate about coding and learning to build web applications.
 
--   I’m a student at Presidency University, Bengaluru and a self-taught learner.
--   I’m passionate about coding and learning to build web applications.
+### Currently Learning:
 
-## 🚀 What I’m Learning:
+✱ JavaScript.<br>
+✱ Web development fundamentals.
 
--   JavaScript
--   Web development fundamentals
+### My Goals:
 
-## 🎯 My Goals:
-
--   Build small web apps to improve my skills
--   Learn more languages and frameworks as I grow
-
-## 🌐 Connect With Me:
-
-> Portfolio under construction.
+✱ Build small web apps to improve my skills.<br>
+✱ Learn more languages and frameworks as I grow.
