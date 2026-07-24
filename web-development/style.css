@@ -1,0 +1,380 @@
+:root {
+	--bodyBackgroundColor: #f5f5f5;
+	--selectionColor: #dfdfdf;
+	--aTagColor: #202020;
+	--hrBackgroundColor: #dfdfdf;
+	--headerBackgroundColor: #ffffff;
+	--mainNavigationUlBackgroundColor: #202020;
+	--mainNavigationAColor: #dfdfdf;
+	--mainNavigationAFocusColor: #606060;
+	--buttonHoverBorder: #9f9f9f;
+	--buttonHoverColor: #202020;
+	--buttonHoverBackgroundColor: #dfdfdf;
+	--buttonColor: #dfdfdf;
+	--buttonBackgroundColor: #202020;
+	--mainPageColor: #202020;
+	--mainPageBackgroundColor: #f5f5f5;
+	--mainHeadingBackgroundColor: #202020;
+	--mainHeadingBorder: #606060;
+	--mainHeadingColor: #dfdfdf;
+	--footerTextColor: #9f9f9f;
+}
+
+[data-theme="dark"] {
+	--bodyBackgroundColor: #0a0a0a;
+	--selectionColor: #606060;
+	--aTagColor: #dfdfdf;
+	--hrBackgroundColor: #202020;
+	--headerBackgroundColor: #000000;
+	--mainNavigationUlBackgroundColor: #202020;
+	--mainNavigationAColor: #dfdfdf;
+	--mainNavigationAFocusColor: #9f9f9f;
+	--buttonHoverBorder: #606060;
+	--buttonHoverColor: #dfdfdf;
+	--buttonHoverBackgroundColor: #202020;
+	--buttonColor: #202020;
+	--buttonBackgroundColor: #dfdfdf;
+	--mainPageColor: #dfdfdf;
+	--mainPageBackgroundColor: #0a0a0a;
+	--mainHeadingBackgroundColor: #dfdfdf;
+	--mainHeadingBorder: #9f9f9f;
+	--mainHeadingColor: #202020;
+	--footerTextColor: #606060;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+
+	margin: 0;
+	max-width: 100vw;
+	overflow-x: hidden;
+
+	background-color: var(--bodyBackgroundColor);
+}
+
+::selection {
+	background: var(--selectionColor);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+a {
+	color: var(--aTagColor);
+	text-decoration: none;
+}
+
+hr {
+	border: none;
+	height: 2px;
+	margin: 0px;
+	background-color: var(--hrBackgroundColor);
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+
+	padding-block: 0rem;
+	padding-inline: clamp(1rem, -5.364rem + 16.97vw, 15rem);
+
+	background-color: var(--headerBackgroundColor);
+}
+
+#navbarLogo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-block: 25px;
+
+	line-height: 0;
+}
+
+header a img {
+	max-width: 3.25rem;
+	transition: all 200ms;
+}
+
+#mainNavigation {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+#mainNavigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	list-style: none;
+
+	margin: 0;
+	padding: 0;
+
+	transition: all 200ms;
+}
+
+#mainNavigation a {
+	font-size: clamp(1.5rem, 1.367rem + 0.426vw, 1.75rem);
+	transition: all 200ms;
+}
+
+#themeButton {
+	width: 42.35px;
+
+	margin: 0;
+	padding: 0;
+
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+#themeButton img {
+	height: 100%;
+}
+
+#menuButton {
+	display: none;
+
+	margin: 0;
+	padding: 0;
+
+	width: 42.35px;
+
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+@media (max-width: 732px) {
+	#menuButton {
+		display: flex;
+		transition: all 200ms;
+	}
+
+	#menuButton img {
+		height: 100%;
+	}
+
+	#mainNavigation ul {
+		display: none;
+		position: absolute;
+
+		inset: 79.73px 0 0 0;
+
+		background-color: var(--mainNavigationUlBackgroundColor);
+	}
+
+	#mainNavigation a {
+		color: var(--mainNavigationAColor);
+		font-size: 2rem;
+	}
+
+	#mainNavigation ul.open {
+		display: flex;
+		flex-direction: column;
+
+		align-items: flex-start;
+		justify-content: center;
+
+		gap: 3rem;
+		padding-inline: 16px;
+
+		transition: all 200ms;
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	header a img:hover {
+		opacity: 0.7;
+	}
+
+	#menuButton:hover {
+		opacity: 0.7;
+	}
+
+	#mainNavigation a:hover,
+	#mainNavigation a:focus {
+		color: var(--mainNavigationAFocusColor);
+		outline: none;
+	}
+
+	button:hover {
+		cursor: pointer;
+		border: 2px solid var(--buttonHoverBorder);
+		color: var(--buttonHoverColor);
+		background-color: var(--buttonHoverBackgroundColor);
+	}
+}
+
+button {
+	width: 80px;
+	height: 25px;
+
+	border: 2px solid transparent;
+	border-radius: 8px;
+
+	font-family: inherit;
+	color: var(--buttonColor);
+	background-color: var(--buttonBackgroundColor);
+
+	transition: all 200ms;
+	user-select: none;
+}
+
+#mainPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-inline: 1rem;
+
+	color: var(--mainPageColor);
+	background-color: var(--mainPageBackgroundColor);
+}
+
+#mainHeading {
+	background-color: var(--mainHeadingBackgroundColor);
+	border: 1px solid var(--mainHeadingBorder);
+	border-radius: 8px;
+	box-shadow: none;
+
+	padding: 1.25rem 2rem;
+	margin-top: 3rem;
+
+	width: min(90vw, 420px);
+
+	color: var(--mainHeadingColor);
+	text-align: center;
+	line-height: 1.5;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+#mainHeading span {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+#mainContent {
+	display: flex;
+	flex-direction: column;
+
+	background-color: var(--mainContentBackgroundColor);
+	border: 1px solid var(--mainContentBorder);
+	border-radius: 8px;
+
+	padding: 2rem;
+	margin-bottom: 0;
+	width: min(90vw, 420px);
+	box-sizing: border-box;
+
+	transition: all 200ms;
+}
+
+.fieldGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+#mainContent label {
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: var(--mainContentLabelColor);
+}
+
+#mainContent input {
+	border: none;
+	border-radius: 8px;
+	box-shadow: inset 0 0 0 1px var(--mainContentInputBoxShadow);
+
+	font-family: inherit;
+	font-size: 1rem;
+	color: var(--mainContentInputColor);
+	background-color: var(--mainContentInputBackgroundColor);
+
+	padding: 0.65rem 0.85rem;
+	width: 100%;
+	box-sizing: border-box;
+
+	transition: all 200ms;
+}
+
+#mainContent input:focus {
+	box-shadow: inset 0 0 0 2px var(--mainContentInputFocusBoxShadow);
+	outline: none;
+}
+
+#mainContent input::placeholder {
+	color: var(--mainContentInputPlaceholderColor);
+}
+
+.input-error {
+	box-shadow: inset 0 0 0 2px var(--inputErrorBoxShadow) !important;
+}
+
+#mainContent button {
+	margin-top: 0.5rem;
+	width: 100%;
+	height: auto;
+	padding: 0.6rem 1rem;
+	font-size: 0.95rem;
+	border-radius: 8px;
+}
+
+#mainContent #resetButton {
+	color: var(--mainContentResetButtonColor);
+	background-color: var(--mainContentResetButtonBackgroundColor);
+	border: 1px solid var(--mainContentResetButtonBorder);
+}
+
+#mainResult:empty {
+	display: none;
+}
+
+#mainResult {
+	background-color: var(--mainResultBackgroundColor);
+	border: 1px solid var(--mainResultBorder);
+	border-radius: 8px;
+	box-shadow: none;
+
+	padding: 1.25rem 2rem;
+
+	width: min(90vw, 420px);
+
+	font-size: 0.95rem;
+	color: var(--mainResultColor);
+	text-align: center;
+	line-height: 1.5;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+footer {
+	text-align: center;
+	color: var(--footerTextColor);
+}
