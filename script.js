@@ -5,12 +5,13 @@ const menuButton = document.getElementById("menuButton");
 const logoImage = document.getElementById("logoImage");
 const themeImage = document.getElementById("themeImage");
 const menuImage = document.getElementById("menuImage");
+const brandLogo = document.getElementById("brandLogo");
 
 const grid = document.getElementById("backgroundGrid");
 const cards = document.querySelectorAll(".portfolioCard");
 for (let i = 0; i < 240; i++) {
 	const card = document.createElement("div");
-	card.style.visibility = i === 119 || i === 120 ? "hidden" : "visible";
+	card.style.visibility = i === 103 || i === 104 || i === 119 || i === 120 ? "hidden" : "visible";
 	grid.appendChild(card);
 }
 
@@ -24,6 +25,7 @@ function applyTheme(isDark) {
 	logoImage.src = isDark ? "images/png/darkTheme/logoMain.png" : "images/png/lightTheme/logoMain.png";
 	themeImage.src = isDark ? "images/png/darkTheme/themeButton.png" : "images/png/lightTheme/themeButton.png";
 	menuImage.src = isDark ? "images/png/darkTheme/menuOpen.png" : "images/png/lightTheme/menuOpen.png";
+	brandLogo.src = isDark ? "images/png/darkTheme/brandLogo.png" : "images/png/lightTheme/brandLogo.png";
 }
 
 applyTheme(colorScheme.matches);
