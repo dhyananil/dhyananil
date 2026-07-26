@@ -22,6 +22,8 @@
 	--mainPagePortfolioCardColor: #dfdfdf;
 	--mainPagePortfolioBackgroundCardColor: #cdcdcd;
 	--mainPagePortfolioInputFocusBoxShadow: #202020;
+	--mainPageBrandCardBackgroundColor: #202020;
+	--mainPageBrandCardColor: #dfdfdf;
 	--footerTextColor: #9f9f9f;
 }
 
@@ -49,6 +51,8 @@
 	--mainPagePortfolioCardColor: #202020;
 	--mainPagePortfolioBackgroundCardColor: #202020;
 	--mainPagePortfolioInputFocusBoxShadow: #dfdfdf;
+	--mainPageBrandCardBackgroundColor: #dfdfdf;
+	--mainPageBrandCardColor: #202020;
 	--footerTextColor: #606060;
 }
 
@@ -287,7 +291,7 @@ button {
 	grid-template-rows: repeat(15, calc(150px * 7 / 6));
 	gap: 1.5rem;
 
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -46.65%);
 
 	opacity: 0.5;
 	transition: all 500ms;
@@ -359,8 +363,67 @@ button {
 	overflow-wrap: break-word;
 }
 
+#cardGroup {
+	position: relative;
+	z-index: 1;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	gap: 1.5rem;
+}
+
+#brandCard {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	width: 324px;
+	height: 175px;
+
+	padding: 1.5rem;
+
+	background-color: var(--mainPageBrandCardBackgroundColor);
+	border-radius: 15px;
+
+	color: var(--mainPageBrandCardColor);
+	transition: all 200ms;
+	cursor: default;
+}
+
+#brandLogo {
+	width: 75px;
+
+	flex-shrink: 0;
+}
+
+#brandText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#brandText h1 {
+	margin: 0;
+
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+#portfolioCards {
+	display: flex;
+	gap: 1.5rem;
+}
+
 @media (hover: hover) and (pointer: fine) {
 	.portfolioCard:hover {
+		transform: translateY(-5px);
+	}
+
+	#brandCard:hover {
 		transform: translateY(-5px);
 	}
 }
