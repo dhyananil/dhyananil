@@ -12,7 +12,12 @@ const sendButton = document.getElementById("sendButton");
 const mainResult = document.getElementById("mainResult");
 mainResult.style.color = getComputedStyle(document.documentElement).getPropertyValue("--mainResultStyle");
 
-//
+const params = new URLSearchParams(window.location.search);
+const source = params.get("source") || "direct";
+
+emailjs.init({
+	publicKey: "RCuZZVECUWxeDfBCS",
+});
 
 const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -27,8 +32,6 @@ function applyTheme(isDark) {
 }
 
 applyTheme(colorScheme.matches);
-
-//
 
 menuButton.addEventListener("click", () => {
 	const isDark = document.documentElement.dataset.theme === "dark";
@@ -49,8 +52,6 @@ themeButton.addEventListener("click", () => {
 
 	applyTheme(!isDark);
 });
-
-//
 
 function validateInput(input) {
 	input.classList.remove("input-error");
@@ -97,34 +98,65 @@ sendButton.addEventListener("click", () => {
 			messageInput.focus();
 		}
 
-		mainResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
+		mainResult.scrollIntoView({
+			behavior: "smooth",
+			block: "nearest",
+		});
+
 		return;
 	}
 
-	// TODO:
-	// Send the email here (EmailJS / Formspree / your backend).
-	// Replace the form only after the request succeeds.
-
-	document.getElementById("mainHeading").style.display = "none";
-
-	document.getElementById("mainContent").innerHTML = `
-	<div style="text-align:center; padding:1rem 0; line-height:1.6;">
-		<p>
-			<strong style="font-size:1.25rem;">Thank You!</strong>
-		</p>
-
-		<p>
-			Your message has been
-			<strong style="font-size:1.25rem;">received</strong>.
-		</p>
-
-		<p>
-			I'll get back to you
-			<strong style="font-size:1.25rem;">as soon as possible.</strong>
-		</p>
-	</div>`;
-
 	mainResult.style.display = "none";
+
+	sendButton.disabled = true;
+	sendButton.textContent = "Sending...";
+
+	const templateParams = {
+		email: emailInput.value.trim(),
+		message: messageInput.value.trim(),
+		source_tag: source,
+		page_url: window.location.href,
+	};
+
+	emailjs
+		.send("portfolioContactService", "portfolioContactTemplate", templateParams)
+		.then(() => {
+			sendButton.disabled = false;
+			sendButton.textContent = "Submit";
+
+			document.getElementById("mainHeading").style.display = "none";
+
+			document.getElementById("mainContent").innerHTML = `
+			<div style="text-align:center; padding:1rem 0; line-height:1.6;">
+				<p>
+					<strong style="font-size:1.25rem;">Thank You!</strong>
+				</p>
+
+				<p>
+					Your message has been
+					<strong style="font-size:1.25rem;">received</strong>.
+				</p>
+
+				<p>
+					I'll get back to you
+					<strong style="font-size:1.25rem;">as soon as possible.</strong>
+				</p>
+			</div>`;
+		})
+		.catch((error) => {
+			sendButton.disabled = false;
+			sendButton.textContent = "Submit";
+
+			mainResult.style.display = "block";
+			mainResult.style.color = getComputedStyle(document.documentElement).getPropertyValue("--mainResultColor");
+
+			mainResult.innerHTML = `
+				Something went <strong style="font-size:1.25rem;">wrong</strong>.
+				Please try again later.
+			`;
+
+			console.error(error);
+		});
 });
 
 emailInput.addEventListener("blur", () => {
