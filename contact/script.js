@@ -22,6 +22,8 @@ function applyTheme(isDark) {
 	logoImage.src = isDark ? "../images/png/darkTheme/logoMain.png" : "../images/png/lightTheme/logoMain.png";
 	themeImage.src = isDark ? "../images/png/darkTheme/themeButton.png" : "../images/png/lightTheme/themeButton.png";
 	menuImage.src = isDark ? "../images/png/darkTheme/menuOpen.png" : "../images/png/lightTheme/menuOpen.png";
+
+	mainResult.style.color = getComputedStyle(document.documentElement).getPropertyValue("--mainResultStyle");
 }
 
 applyTheme(colorScheme.matches);
@@ -44,6 +46,7 @@ menuButton.addEventListener("click", () => {
 
 themeButton.addEventListener("click", () => {
 	const isDark = document.documentElement.dataset.theme === "dark";
+
 	applyTheme(!isDark);
 });
 
