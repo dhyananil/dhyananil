@@ -17,11 +17,20 @@
 	--mainHeadingBackgroundColor: #202020;
 	--mainHeadingBorder: #606060;
 	--mainHeadingColor: #dfdfdf;
-	--mainPagePortfolioCardBackgroundColor: #202020;
-	--mainPagePortfolioCardBorderColor: #606060;
-	--mainPagePortfolioCardColor: #dfdfdf;
-	--mainPagePortfolioBackgroundCardColor: #cdcdcd;
-	--mainPagePortfolioInputFocusBoxShadow: #202020;
+	--mainContentBackgroundColor: #ffffff;
+	--mainContentBorder: #dfdfdf;
+	--mainContentLabelColor: #606060;
+	--mainContentInputBoxShadow: #dfdfdf;
+	--mainContentInputColor: #202020;
+	--mainContentInputBackgroundColor: #ffffff;
+	--mainContentInputFocusBoxShadow: #9f9f9f;
+	--mainContentInputPlaceholderColor: #9f9f9f;
+	--inputErrorBoxShadow: #a34848;
+
+	--mainResultBackgroundColor: #202020;
+	--mainResultBorder: #606060;
+	--mainResultColor: #dfdfdf;
+	--mainResultStyle: #9f9f9f;
 	--footerTextColor: #9f9f9f;
 }
 
@@ -44,11 +53,20 @@
 	--mainHeadingBackgroundColor: #dfdfdf;
 	--mainHeadingBorder: #9f9f9f;
 	--mainHeadingColor: #202020;
-	--mainPagePortfolioCardBackgroundColor: #dfdfdf;
-	--mainPagePortfolioCardBorderColor: #606060;
-	--mainPagePortfolioCardColor: #202020;
-	--mainPagePortfolioBackgroundCardColor: #202020;
-	--mainPagePortfolioInputFocusBoxShadow: #dfdfdf;
+	--mainContentBackgroundColor: #000000;
+	--mainContentBorder: #202020;
+	--mainContentLabelColor: #9f9f9f;
+	--mainContentInputBoxShadow: #202020;
+	--mainContentInputColor: #f5f5f5;
+	--mainContentInputBackgroundColor: #000000;
+	--mainContentInputFocusBoxShadow: #606060;
+	--mainContentInputPlaceholderColor: #606060;
+	--inputErrorBoxShadow: #a34848;
+
+	--mainResultBackgroundColor: #dfdfdf;
+	--mainResultBorder: #9f9f9f;
+	--mainResultColor: #202020;
+	--mainResultStyle: #606060;
 	--footerTextColor: #606060;
 }
 
@@ -260,14 +278,10 @@ button {
 }
 
 #mainPage {
-	position: relative;
-	overflow: hidden;
-
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	flex-wrap: wrap;
-	gap: 1.5rem;
 
 	min-height: calc(100vh - 107px);
 
@@ -275,45 +289,129 @@ button {
 	background-color: var(--mainPageBackgroundColor);
 }
 
-@media (max-width: 900px) {
-	#mainPage {
-		flex-direction: column;
-	}
+#mainHeading {
+	width: min(90vw, 420px);
+
+	padding: 1.25rem 2rem;
+
+	background-color: var(--mainHeadingBackgroundColor);
+	border: 1px solid var(--mainHeadingBorder);
+	border-radius: 8px;
+
+	color: var(--mainHeadingColor);
+	text-align: center;
+	line-height: 1.5;
+	word-break: break-word;
+	overflow-wrap: break-word;
 }
 
+#mainHeading span {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+#mainContent {
+	display: flex;
+	flex-direction: column;
+	/* gap: 1rem; */
+
+	width: min(90vw, 420px);
+
+	padding: 2rem;
+	margin-bottom: 0;
+	box-sizing: border-box;
+
+	background-color: var(--mainContentBackgroundColor);
+	border: 1px solid var(--mainContentBorder);
+	border-radius: 8px;
+
+	transition: all 200ms;
+}
+
+.fieldGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#mainContent label {
+	font-size: 0.95rem;
+	font-weight: 500;
+
+	color: var(--mainContentLabelColor);
+}
+
+#mainContent input,
 #mainContent textarea {
+	width: 100%;
+
+	padding: 0.65rem 0.85rem;
+	box-sizing: border-box;
+
 	border: none;
 	border-radius: 8px;
 	box-shadow: inset 0 0 0 1px var(--mainContentInputBoxShadow);
 
 	font-family: inherit;
 	font-size: 1rem;
+
 	color: var(--mainContentInputColor);
 	background-color: var(--mainContentInputBackgroundColor);
-
-	padding: 0.65rem 0.85rem;
-	width: 100%;
-	min-height: 150px;
-	resize: vertical;
 
 	transition: all 200ms;
 }
 
+#mainContent input:focus,
 #mainContent textarea:focus {
 	box-shadow: inset 0 0 0 2px var(--mainContentInputFocusBoxShadow);
 	outline: none;
 }
 
+#mainContent input::placeholder,
 #mainContent textarea::placeholder {
 	color: var(--mainContentInputPlaceholderColor);
 }
 
+#mainContent textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
 #sendButton {
-	margin-top: 2rem;
 	width: 100%;
 	height: auto;
+
+	margin-top: 0.5rem;
 	padding: 0.6rem 1rem;
+
 	font-size: 0.95rem;
+	border-radius: 8px;
+}
+
+#mainResult {
+	width: min(90vw, 420px);
+	padding: 1.25rem 2rem;
+
+	background-color: var(--mainResultBackgroundColor);
+	border: 1px solid var(--mainResultBorder);
+	border-radius: 8px;
+	box-shadow: none;
+
+	font-size: 0.95rem;
+	color: var(--mainResultColor);
+	text-align: center;
+	line-height: 1.5;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	display: none;
+}
+
+#mainResult.show {
+	display: block;
+}
+
+.input-error {
+	box-shadow: inset 0 0 0 2px var(--inputErrorBoxShadow) !important;
 }
 
 footer {
