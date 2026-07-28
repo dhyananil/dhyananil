@@ -311,7 +311,6 @@ button {
 #mainContent {
 	display: flex;
 	flex-direction: column;
-	/* gap: 1rem; */
 
 	width: min(90vw, 420px);
 
