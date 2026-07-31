@@ -6,6 +6,8 @@ const logoImage = document.getElementById("logoImage");
 const themeImage = document.getElementById("themeImage");
 const menuImage = document.getElementById("menuImage");
 
+window.history.replaceState({}, "", "/video-editing/");
+
 //
 
 const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
