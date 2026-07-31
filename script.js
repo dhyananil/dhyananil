@@ -7,6 +7,8 @@ const themeImage = document.getElementById("themeImage");
 const menuImage = document.getElementById("menuImage");
 const brandLogo = document.getElementById("brandLogo");
 
+window.history.replaceState({}, "", "/");
+
 const grid = document.getElementById("backgroundGrid");
 const cards = document.querySelectorAll(".portfolioCard");
 for (let i = 0; i < 240; i++) {
