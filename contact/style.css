@@ -385,6 +385,11 @@ button {
 	border-radius: 8px;
 }
 
+#sendButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
 #mainResult {
 	width: min(90vw, 420px);
 	padding: 1.25rem 2rem;
