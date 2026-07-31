@@ -30,6 +30,8 @@
 	--mainResultBorder: #606060;
 	--mainResultColor: #dfdfdf;
 	--mainResultStyle: #9f9f9f;
+	--mainResultSendButtonDisabledBackgroundColor: #f5f5f5;
+	--mainResultSendButtonDisabledColor: #606060;
 	--footerTextColor: #9f9f9f;
 }
 
@@ -65,6 +67,8 @@
 	--mainResultBorder: #9f9f9f;
 	--mainResultColor: #202020;
 	--mainResultStyle: #606060;
+	--mainResultSendButtonDisabledBackgroundColor: #202020;
+	--mainResultSendButtonDisabledColor: #9f9f9f;
 	--footerTextColor: #606060;
 }
 
@@ -386,7 +390,9 @@ button {
 }
 
 #sendButton:disabled {
-	opacity: 0.5;
+	background-color: var(--mainResultSendButtonDisabledBackgroundColor);
+	color: var(--mainResultSendButtonDisabledColor);
+	border: 0;
 	cursor: not-allowed;
 }
 
