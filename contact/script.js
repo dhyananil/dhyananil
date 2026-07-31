@@ -14,6 +14,7 @@ mainResult.style.color = getComputedStyle(document.documentElement).getPropertyV
 
 const params = new URLSearchParams(window.location.search);
 const source = params.get("source") || "direct";
+window.history.replaceState({}, "", "/contact/");
 
 emailjs.init({
 	publicKey: "RCuZZVECUWxeDfBCS",
