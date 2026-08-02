@@ -58,7 +58,7 @@ function validateInput(input) {
 	input.classList.remove("input-error");
 
 	if (input === emailInput) {
-		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
 
 		if (!emailRegex.test(input.value.trim())) {
 			input.classList.add("input-error");
