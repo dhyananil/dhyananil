@@ -215,8 +215,11 @@ header a img {
 		align-items: flex-start;
 		justify-content: center;
 
-		gap: 3rem;
+		position: fixed;
+		inset: 81px 0 0 0;
+
 		padding-inline: 16px;
+		gap: 3rem;
 
 		transition: all 200ms;
 	}
