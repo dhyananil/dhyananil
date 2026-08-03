@@ -250,6 +250,8 @@ header a img {
 
 		padding-inline: 16px;
 		gap: 3rem;
+
+		transition: all 200ms;
 	}
 }
 
