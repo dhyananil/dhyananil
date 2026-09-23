@@ -390,6 +390,7 @@ button {
 #mainContent textarea {
 	min-height: 150px;
 	resize: vertical;
+	transition: resize 0ms;
 }
 
 #sendButton {
