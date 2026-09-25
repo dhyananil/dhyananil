@@ -1,13 +1,4 @@
 {
-	"rewrites": [
-		{
-			"source": "/web-development",
-			"destination": "/web-development/index.html"
-		},
-		{
-			"source": "/video-editing",
-			"destination": "/video-editing/index.html"
-		}
-	],
+	"cleanUrls": true,
 	"trailingSlash": false
 }
