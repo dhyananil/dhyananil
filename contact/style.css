@@ -2,8 +2,8 @@
 	--bodyBackgroundColor: #f5f5f5;
 	--selectionColor: #dfdfdf;
 	--aTagColor: #202020;
-	--hrBackgroundColor: #dfdfdf;
-	--headerBackgroundColor: #ffffff;
+	--headerBackgroundColor: #ffffffbf;
+	--headerBorderBackgroundColor: #dfdfdfbf;
 	--mainNavigationUlBackgroundColor: #202020;
 	--mainNavigationAColor: #dfdfdf;
 	--mainNavigationAFocusColor: #606060;
@@ -41,8 +41,8 @@
 	--bodyBackgroundColor: #0a0a0a;
 	--selectionColor: #606060;
 	--aTagColor: #dfdfdf;
-	--hrBackgroundColor: #202020;
-	--headerBackgroundColor: #000000;
+	--headerBackgroundColor: #000000bf;
+	--headerBorderBackgroundColor: #202020bf;
 	--mainNavigationUlBackgroundColor: #202020;
 	--mainNavigationAColor: #dfdfdf;
 	--mainNavigationAFocusColor: #9f9f9f;
@@ -110,25 +110,12 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
 	appearance: none;
 	-moz-appearance: textfield;
+	-webkit-appearance: none;
 }
 
 a {
 	color: var(--aTagColor);
 	text-decoration: none;
-}
-
-hr {
-	position: fixed;
-	top: var(--header-height);
-	left: 0;
-	width: 100%;
-	z-index: 999;
-
-	border: none;
-	height: 2px;
-	margin: 0;
-
-	background-color: var(--hrBackgroundColor);
 }
 
 header {
@@ -146,6 +133,10 @@ header {
 	padding-inline: clamp(1rem, -5.364rem + 16.97vw, 15rem);
 
 	background-color: var(--headerBackgroundColor);
+	border-bottom: 2px solid var(--headerBorderBackgroundColor);
+
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 }
 
 #navbarLogo {
