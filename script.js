@@ -17,8 +17,6 @@ for (let i = 0; i < 240; i++) {
 	grid.appendChild(card);
 }
 
-//
-
 const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 function applyTheme(isDark) {
@@ -31,8 +29,6 @@ function applyTheme(isDark) {
 }
 
 applyTheme(colorScheme.matches);
-
-//
 
 menuButton.addEventListener("click", () => {
 	const isDark = document.documentElement.dataset.theme === "dark";
@@ -52,8 +48,6 @@ themeButton.addEventListener("click", () => {
 	const isDark = document.documentElement.dataset.theme === "dark";
 	applyTheme(!isDark);
 });
-
-//
 
 colorScheme.addEventListener("change", (event) => {
 	applyTheme(event.matches);
