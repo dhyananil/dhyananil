@@ -8,8 +8,6 @@ const menuImage = document.getElementById("menuImage");
 
 window.history.replaceState({}, "", "/video-editing/");
 
-//
-
 const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 function applyTheme(isDark) {
@@ -21,8 +19,6 @@ function applyTheme(isDark) {
 }
 
 applyTheme(colorScheme.matches);
-
-//
 
 menuButton.addEventListener("click", () => {
 	const isDark = document.documentElement.dataset.theme === "dark";
@@ -42,8 +38,6 @@ themeButton.addEventListener("click", () => {
 	const isDark = document.documentElement.dataset.theme === "dark";
 	applyTheme(!isDark);
 });
-
-//
 
 colorScheme.addEventListener("change", (event) => {
 	applyTheme(event.matches);
