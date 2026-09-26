@@ -2,8 +2,8 @@
 	--bodyBackgroundColor: #f5f5f5;
 	--selectionColor: #dfdfdf;
 	--aTagColor: #202020;
-	--headerBackgroundColor: #ffffffbf;
-	--headerBorderBackgroundColor: #dfdfdfbf;
+	--headerBackgroundColor: #ffffff;
+	--headerBorderBackgroundColor: #dfdfdf;
 	--mainNavigationUlBackgroundColor: #202020;
 	--mainNavigationAColor: #dfdfdf;
 	--mainNavigationAFocusColor: #606060;
@@ -19,15 +19,16 @@
 	--mainHeadingColor: #dfdfdf;
 	--footerTextColor: #9f9f9f;
 
-	--header-height: 79.73px;
+	--header-height: 82px;
+	--navButtonSpacing: 42.35px;
 }
 
 [data-theme="dark"] {
 	--bodyBackgroundColor: #0a0a0a;
 	--selectionColor: #606060;
 	--aTagColor: #dfdfdf;
-	--headerBackgroundColor: #000000bf;
-	--headerBorderBackgroundColor: #202020bf;
+	--headerBackgroundColor: #000000;
+	--headerBorderBackgroundColor: #202020;
 	--mainNavigationUlBackgroundColor: #202020;
 	--mainNavigationAColor: #dfdfdf;
 	--mainNavigationAFocusColor: #9f9f9f;
@@ -104,9 +105,6 @@ header {
 
 	background-color: var(--headerBackgroundColor);
 	border-bottom: 2px solid var(--headerBorderBackgroundColor);
-
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
 }
 
 #navbarLogo {
@@ -148,7 +146,7 @@ header a img {
 }
 
 #themeButton {
-	width: 42.35px;
+	width: var(--navButtonSpacing);
 
 	margin: 0;
 	padding: 0;
@@ -168,7 +166,7 @@ header a img {
 	margin: 0;
 	padding: 0;
 
-	width: 42.35px;
+	width: var(--navButtonSpacing);
 
 	background: none;
 	border: none;
@@ -187,16 +185,11 @@ header a img {
 
 	#mainNavigation ul {
 		display: none;
-		position: absolute;
-
-		inset: var(--header-height) 0 0 0;
-
-		background-color: var(--mainNavigationUlBackgroundColor);
 	}
 
 	#mainNavigation a {
-		color: var(--mainNavigationAColor);
 		font-size: 2.5rem;
+		color: var(--mainNavigationAColor);
 	}
 
 	#mainNavigation ul.open {
@@ -206,12 +199,15 @@ header a img {
 		align-items: flex-start;
 		justify-content: center;
 
-		position: fixed;
-		inset: 81px 0 0 0;
+		position: absolute;
+
+		inset: var(--header-height) 0 0 0;
+		height: calc(100vh - var(--header-height));
 
 		padding-inline: 16px;
 		gap: 3rem;
 
+		background-color: var(--mainNavigationUlBackgroundColor);
 		transition: all 200ms;
 	}
 }
@@ -259,7 +255,8 @@ button {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding-inline: 1rem;
+
+	min-height: calc(100vh - var(--header-height)); /*Edit Here*/
 
 	color: var(--mainPageColor);
 	background-color: var(--mainPageBackgroundColor);
