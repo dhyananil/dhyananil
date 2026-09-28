@@ -13,7 +13,8 @@ const grid = document.getElementById("backgroundGrid");
 const cards = document.querySelectorAll(".portfolioCard");
 for (let i = 0; i < 240; i++) {
 	const card = document.createElement("div");
-	card.style.visibility = i === 103 || i === 104 || i === 119 || i === 120 ? "hidden" : "visible";
+	// card.style.visibility = i === 103 || i === 104 || i === 119 || i === 120 ? "hidden" : "visible";
+	card.style.visibility = i === 85 || i === 90 ? "hidden" : "visible";
 	grid.appendChild(card);
 }
 
