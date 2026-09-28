@@ -17,12 +17,13 @@
 	--mainHeadingBackgroundColor: #202020;
 	--mainHeadingBorder: #606060;
 	--mainHeadingColor: #dfdfdf;
-	--mainPagePortfolioCardBackgroundColor: #202020;
+	--mainPagePortfolioCardBackgroundColor: #dfdfdf;
 	--mainPagePortfolioCardBorderColor: #606060;
-	--mainPagePortfolioCardColor: #dfdfdf;
+	--mainPagePortfolioCardColor: #202020;
 	--mainPagePortfolioBackgroundCardColor: #cdcdcd;
 	--mainPagePortfolioInputFocusBoxShadow: #202020;
 	--mainPageBrandCardBackgroundColor: #dfdfdf;
+	--mainPageParentCardBackgroundColor: #9f9f9f;
 	--mainPageBrandCardColor: #202020;
 	--footerTextColor: #9f9f9f;
 
@@ -49,12 +50,13 @@
 	--mainHeadingBackgroundColor: #dfdfdf;
 	--mainHeadingBorder: #9f9f9f;
 	--mainHeadingColor: #202020;
-	--mainPagePortfolioCardBackgroundColor: #dfdfdf;
+	--mainPagePortfolioCardBackgroundColor: #202020;
 	--mainPagePortfolioCardBorderColor: #606060;
-	--mainPagePortfolioCardColor: #202020;
+	--mainPagePortfolioCardColor: #dfdfdf;
 	--mainPagePortfolioBackgroundCardColor: #202020;
 	--mainPagePortfolioInputFocusBoxShadow: #dfdfdf;
 	--mainPageBrandCardBackgroundColor: #202020;
+	--mainPageParentCardBackgroundColor: #606060;
 	--mainPageBrandCardColor: #dfdfdf;
 	--footerTextColor: #606060;
 }
@@ -294,8 +296,9 @@ button {
 
 	transform: translate(-50%, -34.4375%);
 
-	background-color: #808080;
-	border-radius: 15px;
+	background-color: var(--mainPageParentCardBackgroundColor);
+	/* background-color: #808080; */
+	border-radius: 50px;
 }
 
 #backgroundGrid {
