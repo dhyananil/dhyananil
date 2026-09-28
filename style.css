@@ -22,8 +22,8 @@
 	--mainPagePortfolioCardColor: #dfdfdf;
 	--mainPagePortfolioBackgroundCardColor: #cdcdcd;
 	--mainPagePortfolioInputFocusBoxShadow: #202020;
-	--mainPageBrandCardBackgroundColor: #202020;
-	--mainPageBrandCardColor: #dfdfdf;
+	--mainPageBrandCardBackgroundColor: #dfdfdf;
+	--mainPageBrandCardColor: #202020;
 	--footerTextColor: #9f9f9f;
 
 	--header-height: 82px;
@@ -54,8 +54,8 @@
 	--mainPagePortfolioCardColor: #202020;
 	--mainPagePortfolioBackgroundCardColor: #202020;
 	--mainPagePortfolioInputFocusBoxShadow: #dfdfdf;
-	--mainPageBrandCardBackgroundColor: #dfdfdf;
-	--mainPageBrandCardColor: #202020;
+	--mainPageBrandCardBackgroundColor: #202020;
+	--mainPageBrandCardColor: #dfdfdf;
 	--footerTextColor: #606060;
 }
 
@@ -281,6 +281,23 @@ button {
 	background-color: var(--mainPageBackgroundColor);
 }
 
+#parentCard {
+	position: absolute;
+	z-index: 1;
+	/* opacity: 0.5; */
+
+	width: 1020px;
+	height: 1122px;
+
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -34.4375%);
+
+	background-color: #808080;
+	border-radius: 15px;
+}
+
 #backgroundGrid {
 	position: absolute;
 	z-index: 0;
@@ -307,7 +324,7 @@ button {
 
 #cards {
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 
 	display: flex;
 	flex-wrap: wrap;
