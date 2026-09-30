@@ -27,9 +27,10 @@
 
 	<body>
 		<header>
-			<a id="navbarLogo" href="/">
+			<a id="navbarLogo" href="/" oncontextmenu="return false;" ondragstart="return false;">
 				<img id="logoImage" src="" alt="Dhyan Anil's logo" />
 			</a>
+
 			<nav id="mainNavigation">
 				<ul>
 					<li>
@@ -42,8 +43,14 @@
 						<a id="navbarContact" href="/contact/?source=video-editing">Contact</a>
 					</li>
 				</ul>
-				<button id="themeButton"><img id="themeImage" src="" alt="toggle between themes" /></button>
-				<button id="menuButton"><img id="menuImage" src="" alt="open menu button" /></button>
+
+				<button id="themeButton" oncontextmenu="return false;" ondragstart="return false;">
+					<img id="themeImage" src="" alt="toggle between themes" />
+				</button>
+
+				<button id="menuButton" oncontextmenu="return false;" ondragstart="return false;">
+					<img id="menuImage" src="" alt="open menu button" />
+				</button>
 			</nav>
 		</header>
 
