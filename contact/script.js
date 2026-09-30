@@ -8,7 +8,7 @@ const menuImage = document.getElementById("menuImage");
 
 const emailInput = document.getElementById("emailInput");
 const messageInput = document.getElementById("messageInput");
-const sendButton = document.getElementById("sendButton");
+const submitButton = document.getElementById("submitButton");
 const mainResult = document.getElementById("mainResult");
 mainResult.style.color = getComputedStyle(document.documentElement).getPropertyValue("--mainResultStyle");
 
@@ -76,7 +76,7 @@ function validateInput(input) {
 	return true;
 }
 
-sendButton.addEventListener("click", () => {
+submitButton.addEventListener("click", () => {
 	mainResult.style.display = "block";
 	mainResult.style.color = getComputedStyle(document.documentElement).getPropertyValue("--mainResultColor");
 
@@ -109,8 +109,8 @@ sendButton.addEventListener("click", () => {
 
 	mainResult.style.display = "none";
 
-	sendButton.disabled = true;
-	sendButton.textContent = "Sending...";
+	submitButton.disabled = true;
+	submitButton.textContent = "Sending...";
 
 	const templateParams = {
 		email: emailInput.value.trim(),
@@ -122,8 +122,8 @@ sendButton.addEventListener("click", () => {
 	emailjs
 		.send("portfolioContactService", "portfolioContactTemplate", templateParams)
 		.then(() => {
-			sendButton.disabled = false;
-			sendButton.textContent = "Submit";
+			submitButton.disabled = false;
+			submitButton.textContent = "Submit";
 
 			document.getElementById("mainHeading").style.display = "none";
 
@@ -145,8 +145,8 @@ sendButton.addEventListener("click", () => {
 			</div>`;
 		})
 		.catch((error) => {
-			sendButton.disabled = false;
-			sendButton.textContent = "Submit";
+			submitButton.disabled = false;
+			submitButton.textContent = "Submit";
 
 			mainResult.style.display = "block";
 			mainResult.style.color = getComputedStyle(document.documentElement).getPropertyValue("--mainResultColor");
@@ -182,7 +182,7 @@ messageInput.addEventListener("keydown", (event) => {
 		event.preventDefault();
 
 		validateInput(messageInput);
-		sendButton.click();
+		submitButton.click();
 	}
 });
 
