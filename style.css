@@ -24,11 +24,15 @@
 	--mainPagePortfolioInputFocusBoxShadow: #202020;
 	--mainPageProfileCardBackgroundColor: #dfdfdf;
 	--mainPageParentCardBackgroundColor: #9f9f9f;
+	--mainPageParentCardBorderColor: #bfbfbf;
 	--mainPageProfileCardColor: #202020;
-	--mainPageProfileImageBorderColor: #202020;
-	--mainPageProfileNameTextFill: #dfdfdf;
-	--mainPageProfileNameSVGColor: #9f9f9f;
-	--mainPagePortfolioHRColor: #606060;
+	--mainPageProfileImageBorderColor: #dfdfdf;
+	--mainPageProfileNameTextFill: #202020;
+	--mainPageProfileNameSVGColor1: #dfdfdf;
+	--mainPageProfileNameSVGColor2: #dfdfdf;
+	--mainPageProfileNameSVGColor3: #dfdfdf;
+	--mainPageProfileNameSVGColor4: #9f9f9f;
+	--mainPagePortfolioHRColor: #bfbfbf;
 	--mainPagePortfolioSecondaryCardColor: #dfdfdf;
 	--mainPagePortfolioSecondaryCardBackgroundColor: #606060;
 	--footerTextColor: #9f9f9f;
@@ -62,11 +66,15 @@
 	--mainPagePortfolioInputFocusBoxShadow: #dfdfdf;
 	--mainPageProfileCardBackgroundColor: #202020;
 	--mainPageParentCardBackgroundColor: #606060;
+	--mainPageParentCardBorderColor: #404040;
 	--mainPageProfileCardColor: #dfdfdf;
 	--mainPageProfileImageBorderColor: #202020;
 	--mainPageProfileNameTextFill: #dfdfdf;
-	--mainPageProfileNameSVGColor: #606060;
-	--mainPagePortfolioHRColor: #9f9f9f;
+	--mainPageProfileNameSVGColor1: #202020;
+	--mainPageProfileNameSVGColor2: #202020;
+	--mainPageProfileNameSVGColor3: #202020;
+	--mainPageProfileNameSVGColor4: #606060;
+	--mainPagePortfolioHRColor: #404040;
 	--mainPagePortfolioSecondaryCardColor: #202020;
 	--mainPagePortfolioSecondaryCardBackgroundColor: #9f9f9f;
 	--footerTextColor: #606060;
@@ -316,6 +324,7 @@ button {
 	padding: 2.5rem;
 
 	background-color: var(--mainPageParentCardBackgroundColor);
+	border: 5px solid var(--mainPageParentCardBorderColor);
 	border-radius: 50px;
 
 	transition: all 200ms;
@@ -429,7 +438,24 @@ button {
 
 	width: 110%;
 	height: auto;
-	fill: var(--mainPageProfileNameSVGColor);
+
+	transition: all 200ms;
+}
+#svg1 {
+	fill: var(--mainPageProfileNameSVGColor1);
+	transition: all 200ms;
+}
+
+#svg2 {
+	fill: var(--mainPageProfileNameSVGColor2);
+	transition: all 200ms;
+}
+#svg3 {
+	fill: var(--mainPageProfileNameSVGColor3);
+	transition: all 200ms;
+}
+#svg4 {
+	fill: var(--mainPageProfileNameSVGColor4);
 	transition: all 200ms;
 }
 
@@ -443,7 +469,8 @@ button {
 #parentCard hr {
 	width: 70%;
 	border: 0;
-	border-top: 2px solid var(--mainPagePortfolioHRColor);
+	border: 2px solid var(--mainPagePortfolioHRColor);
+	border-radius: 2px;
 	margin: 1.5rem 0;
 }
 
@@ -587,7 +614,10 @@ footer {
 /*
 #f5f5f5
 #dfdfdf
+#bfbfbf
 #9f9f9f
+#7f7f7f
 #606060
+#404040
 #202020
 */
