@@ -22,11 +22,16 @@
 	--mainPagePortfolioCardColor: #202020;
 	--mainPagePortfolioBackgroundCardColor: #cdcdcd;
 	--mainPagePortfolioInputFocusBoxShadow: #202020;
-	--mainPageBrandCardBackgroundColor: #dfdfdf;
+	--mainPageProfileCardBackgroundColor: #dfdfdf;
 	--mainPageParentCardBackgroundColor: #9f9f9f;
-	--mainPageBrandCardColor: #202020;
+	--mainPageProfileCardColor: #202020;
+	--mainPageProfileImageBorderColor: #202020;
+	--mainPageProfileNameTextFill: #dfdfdf;
+	--mainPageProfileNameSVGColor: #9f9f9f;
+	--mainPagePortfolioHRColor: #606060;
+	--mainPagePortfolioSecondaryCardColor: #dfdfdf;
+	--mainPagePortfolioSecondaryCardBackgroundColor: #606060;
 	--footerTextColor: #9f9f9f;
-
 	--header-height: 82px;
 	--navButtonSpacing: 42.35px;
 }
@@ -55,9 +60,15 @@
 	--mainPagePortfolioCardColor: #dfdfdf;
 	--mainPagePortfolioBackgroundCardColor: #202020;
 	--mainPagePortfolioInputFocusBoxShadow: #dfdfdf;
-	--mainPageBrandCardBackgroundColor: #202020;
+	--mainPageProfileCardBackgroundColor: #202020;
 	--mainPageParentCardBackgroundColor: #606060;
-	--mainPageBrandCardColor: #dfdfdf;
+	--mainPageProfileCardColor: #dfdfdf;
+	--mainPageProfileImageBorderColor: #202020;
+	--mainPageProfileNameTextFill: #dfdfdf;
+	--mainPageProfileNameSVGColor: #606060;
+	--mainPagePortfolioHRColor: #9f9f9f;
+	--mainPagePortfolioSecondaryCardColor: #202020;
+	--mainPagePortfolioSecondaryCardBackgroundColor: #9f9f9f;
 	--footerTextColor: #606060;
 }
 
@@ -148,6 +159,7 @@ header a img {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
+
 	list-style: none;
 
 	margin: 0;
@@ -175,6 +187,7 @@ header a img {
 #themeButton img {
 	height: 100%;
 }
+
 #menuButton {
 	display: none;
 
@@ -191,7 +204,6 @@ header a img {
 @media (max-width: 415px) {
 	#menuButton {
 		display: flex;
-
 		transition: all 200ms;
 	}
 
@@ -211,7 +223,6 @@ header a img {
 	#mainNavigation ul.open {
 		display: flex;
 		flex-direction: column;
-
 		align-items: flex-start;
 		justify-content: center;
 
@@ -245,7 +256,6 @@ header a img {
 
 	button:hover {
 		cursor: pointer;
-
 		border: 2px solid var(--buttonHoverBorder);
 		color: var(--buttonHoverColor);
 		background-color: var(--buttonHoverBackgroundColor);
@@ -260,10 +270,12 @@ button {
 	border-radius: 8px;
 
 	font-family: inherit;
+
 	color: var(--buttonColor);
 	background-color: var(--buttonBackgroundColor);
 
 	user-select: none;
+
 	transition: all 200ms;
 }
 
@@ -275,9 +287,10 @@ button {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+
 	gap: 1.5rem;
 
-	min-height: calc(100vh - var(--header-height));
+	min-height: calc(100vh - var(--header-height) - 25px);
 
 	color: var(--mainPageColor);
 	background-color: var(--mainPageBackgroundColor);
@@ -286,54 +299,47 @@ button {
 #parentCard {
 	position: absolute;
 	z-index: 1;
-	/* opacity: 0.5; */
 
-	width: 1020px;
-	height: 1122px;
+	width: clamp(25rem, 14.803rem + 54.386vw, 63.75rem);
+	height: clamp(25rem, 15.132rem + 52.632vw, 62.5rem);
 
 	top: 50%;
 	left: 50%;
 
-	transform: translate(-50%, -34.4375%);
+	transform: translate(-50%, -28.625%);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	padding: 2.5rem;
 
 	background-color: var(--mainPageParentCardBackgroundColor);
-	/* background-color: #808080; */
 	border-radius: 50px;
+
+	transition: all 200ms;
 }
 
 #backgroundGrid {
 	position: absolute;
 	z-index: 0;
 
-	top: 50%;
-	left: 50%;
-
 	display: grid;
-	grid-template-columns: repeat(16, 150px);
-	grid-template-rows: repeat(15, calc(150px * 7 / 6));
-	gap: 1.5rem;
-
-	transform: translate(-50%, -46.65%);
+	grid-template-columns: repeat(16, clamp(3.67647rem, 2.17691rem + 7.99794vw, 9.375rem));
+	grid-template-rows: repeat(15, calc(clamp(3.67647rem, 2.17691rem + 7.99794vw, 9.375rem) * 7 / 6));
+	gap: clamp(0.588235rem, 0.348306rem + 1.27967vw, 1.5rem);
 
 	opacity: 0.5;
-	transition: all 500ms;
+
+	transition: all 200ms;
 }
 
 #backgroundGrid div {
 	background: var(--mainPagePortfolioBackgroundCardColor);
+
 	border: 1px dashed var(--mainPagePortfolioCardBorderColor);
 	border-radius: 15px;
-}
-
-#cards {
-	position: relative;
-	z-index: 2;
-
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	gap: 1.5rem;
 }
 
 .portfolioCard {
@@ -385,59 +391,81 @@ button {
 	overflow-wrap: break-word;
 }
 
-#cardGroup {
-	position: relative;
-	z-index: 1;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	gap: 1.5rem;
-}
-
-#brandCard {
+#profileCard {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	margin-block: 2rem;
 	gap: 2rem;
 
-	width: 324px;
-	height: 175px;
+	width: fit-content;
+	min-height: 280px;
 
-	padding: 1.5rem;
-
-	background-color: var(--mainPageBrandCardBackgroundColor);
 	border-radius: 15px;
 
-	color: var(--mainPageBrandCardColor);
 	transition: all 200ms;
-	cursor: default;
 }
 
-#brandLogo {
-	width: 75px;
+#profileImage {
+	width: 280px;
+	height: 280px;
+
+	border: 8.75px solid var(--mainPageProfileImageBorderColor);
+	border-radius: 50%;
 
 	flex-shrink: 0;
+
+	transition: all 200ms;
 }
 
-#brandText {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+#profileName {
+	flex-shrink: 0;
+	transition: all 200ms;
 }
 
-#brandText h1 {
-	margin: 0;
+#profileName svg {
+	display: block;
 
-	font-size: 2.5rem;
+	width: 110%;
+	height: auto;
+	fill: var(--mainPageProfileNameSVGColor);
+	transition: all 200ms;
+}
+
+#profileName text {
+	font-size: 48px;
 	font-weight: 700;
-	line-height: 1.25;
+
+	fill: var(--mainPageProfileNameTextFill);
+}
+
+#parentCard hr {
+	width: 70%;
+	border: 0;
+	border-top: 2px solid var(--mainPagePortfolioHRColor);
+	margin: 1.5rem 0;
 }
 
 #portfolioCards {
 	display: flex;
-	gap: 1.5rem;
+	gap: 7rem;
+	margin-block: 2rem;
+}
+
+#contactCard {
+	align-self: center;
+	width: 112.5px;
+	aspect-ratio: 6 / 7;
+	min-height: 0;
+
+	color: var(--mainPagePortfolioSecondaryCardColor);
+	background-color: var(--mainPagePortfolioSecondaryCardBackgroundColor);
+}
+
+#contactCard .cardContent svg {
+	width: 48px;
+	height: 48px;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -445,8 +473,10 @@ button {
 		transform: translateY(-5px);
 	}
 
-	#brandCard:hover {
+	#profileName:hover,
+	#profileImage:hover {
 		transform: translateY(-5px);
+		cursor: default;
 	}
 }
 
@@ -462,9 +492,96 @@ button {
 	}
 }
 
+@media (max-width: 949px), (max-height: 949px) {
+	#mainPage {
+		min-height: calc(100vh - var(--header-height) - 25px);
+	}
+
+	#parentCard {
+		width: 2000px;
+		height: 2000px;
+		justify-content: center;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#parentCard hr {
+		width: 80vw;
+	}
+
+	#profileCard {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		min-height: 140px;
+	}
+
+	#profileImage {
+		width: clamp(8.75rem, -0.025rem + 40.115vw, 17.5rem);
+		height: clamp(8.75rem, -0.025rem + 40.115vw, 17.5rem);
+		border-width: 4.375px;
+	}
+
+	#profileName svg {
+		width: clamp(10.938rem, 3.103rem + 35.817vw, 18.75rem);
+	}
+
+	.portfolioCard {
+		width: clamp(6.25rem, 3.116rem + 14.327vw, 9.375rem);
+		min-height: 0;
+		aspect-ratio: 6 / 7;
+	}
+
+	#portfolioCards {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: clamp(14px, calc(16.017vw - 42.06px), 69.9px);
+		margin-block: 2rem;
+	}
+
+	#contactCard {
+		width: clamp(4.6875rem, 2.337rem + 10.745vw, 7.03125rem);
+		min-height: 0;
+	}
+
+	.cardContent svg {
+		width: clamp(3rem, 1.997rem + 4.585vw, 4rem);
+		height: clamp(3rem, 1.997rem + 4.585vw, 4rem);
+	}
+
+	.cardContent h2 {
+		font-size: clamp(0.75rem, 0.499rem + 1.146vw, 1rem);
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	#contactCard .cardContent {
+		padding: 0.5rem;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	#contactCard .cardContent svg {
+		width: clamp(3rem, 1.997rem + 4.585vw, 4rem);
+		height: clamp(3rem, 1.997rem + 4.585vw, 4rem);
+		margin: 0;
+	}
+
+	#contactCard .cardContent h2 {
+		font-size: clamp(0.75rem, 0.499rem + 1.146vw, 1rem);
+		font-weight: 600;
+		line-height: 1.2;
+		margin: 0;
+	}
+}
+
 footer {
 	text-align: center;
 	color: var(--footerTextColor);
+	cursor: default;
 }
 
 /*
