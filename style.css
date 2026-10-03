@@ -441,20 +441,20 @@ button {
 
 	transition: all 200ms;
 }
-#svg1 {
+#profileSVG1 {
 	fill: var(--mainPageProfileNameSVGColor1);
 	transition: all 200ms;
 }
 
-#svg2 {
+#profileSVG2 {
 	fill: var(--mainPageProfileNameSVGColor2);
 	transition: all 200ms;
 }
-#svg3 {
+#profileSVG3 {
 	fill: var(--mainPageProfileNameSVGColor3);
 	transition: all 200ms;
 }
-#svg4 {
+#profileSVG4 {
 	fill: var(--mainPageProfileNameSVGColor4);
 	transition: all 200ms;
 }
