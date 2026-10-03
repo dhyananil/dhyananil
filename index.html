@@ -27,9 +27,10 @@
 
 	<body>
 		<header>
-			<a id="navbarLogo" href="/">
+			<a id="navbarLogo" href="/" oncontextmenu="return false;" ondragstart="return false;">
 				<img id="logoImage" src="" alt="Dhyan Anil's logo" />
 			</a>
+
 			<nav id="mainNavigation">
 				<ul>
 					<li>
@@ -39,25 +40,36 @@
 						<a id="navbarContact" href="/contact/index.html?source=dhyananil">Contact</a>
 					</li>
 				</ul>
-				<button id="themeButton"><img id="themeImage" src="" alt="toggle between themes" /></button>
-				<button id="menuButton"><img id="menuImage" src="" alt="open menu button" /></button>
+
+				<button id="themeButton" oncontextmenu="return false;" ondragstart="return false;">
+					<img id="themeImage" src="" alt="toggle between themes" />
+				</button>
+
+				<button id="menuButton" oncontextmenu="return false;" ondragstart="return false;">
+					<img id="menuImage" src="" alt="open menu button" />
+				</button>
 			</nav>
 		</header>
 
 		<section id="mainPage">
-			<div id="parentCard"></div>
+			<div id="parentCard">
+				<div id="profileCard">
+					<img id="profileImage" src="" alt="Dhyan Anil's profile picture" oncontextmenu="return false;" ondragstart="return false;" />
 
-			<div id="backgroundGrid"></div>
+					<div id="profileName">
+						<svg viewBox="0 0 200 137.5">
+							<path d="M 0 25 Q 0 0 25 0 H 175 Q 200 0 200 25 V 50 Q 200 75 175 75 H 0 Z" fill="#202020" />
+							<path d="M 0 74 H 125 V 112.5 Q 125 137.5 100 137.5 H 25 Q 0 137.5 0 112.5 Z" fill="#202020" />
+							<rect x="124" y="74" width="26" height="27" fill="#202020" />
+							<path d="M 125 100 Q 125 75 150 75 H 162.5 V 107 Q 162.5 107 150 107 H 125 Z" />
 
-			<div id="cardGroup">
-				<div id="brandCard">
-					<img id="brandLogo" src="" alt="Dhyan Anil's logo" />
-
-					<div id="brandText">
-						<h1>Dhyan</h1>
-						<h1>Anil</h1>
+							<text x="100" y="37.5" text-anchor="middle" dominant-baseline="middle">Dhyan</text>
+							<text x="62.5" y="105.75" text-anchor="middle" dominant-baseline="middle">Anil</text>
+						</svg>
 					</div>
 				</div>
+
+				<hr />
 
 				<div id="portfolioCards">
 					<a class="portfolioCard" id="videoEditingCard" href="/video-editing">
@@ -79,8 +91,20 @@
 							<h2>Website Development</h2>
 						</div>
 					</a>
+
+					<a class="portfolioCard" id="contactCard" href="/contact">
+						<div class="cardContent">
+							<svg viewBox="0 0 640 640">
+								<path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
+							</svg>
+
+							<h2>Contact Me</h2>
+						</div>
+					</a>
 				</div>
 			</div>
+
+			<div id="backgroundGrid"></div>
 		</section>
 
 		<footer>© 2026 Dhyan Anil</footer>
