@@ -1,6 +1,6 @@
 ### Hi, I am Dhyan:
 
-✱ Student at Presidency University, Bengaluru and a self-taught learner.<br>
+✱ Student at RV College of Engineering, Bengaluru and a self-taught learner.<br>
 ✱ Passionate about coding and learning to build web applications.
 
 ### Currently Learning:
